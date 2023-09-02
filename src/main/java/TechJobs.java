@@ -125,7 +125,7 @@ public class TechJobs {
             System.out.println("No Results");
         } else {
             for (int i = 0; i < someJobs.size(); i++) {
-                System.out.println(line);
+                System.out.println("\n" + line);
                 for (Map.Entry<String, String> jobs : someJobs.get(i).entrySet()) {
                     System.out.println(jobs.getKey() + ": " + jobs.getValue());
                 }
