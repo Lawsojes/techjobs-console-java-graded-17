@@ -68,7 +68,7 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
-
+        System.out.println(column);
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
@@ -93,9 +93,26 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+        for (HashMap<String, String> allJob : allJobs) {
+            boolean state = false;
+            String[] keys = allJob.keySet().toArray(new String[0]);
+
+            for (String key : keys) {
+                if (allJob.get(key).contains(value)){
+                    state = true;
+                }
+            }
+
+            if (state) {
+               jobs.add(allJob);
+               System.out.println(allJob);
+            }
+        }
 
         // TODO - implement this method
-        return null;
+        return jobs;
     }
 
     /**
