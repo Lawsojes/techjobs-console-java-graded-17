@@ -122,7 +122,7 @@ public class TechJobs {
         String line = "*****";
 //        System.out.println(someJobs.get(1));
         if (someJobs.isEmpty()){
-            System.out.println("No Results");
+            System.out.print("No Results");
         } else {
             for (int i = 0; i < someJobs.size(); i++) {
                 System.out.println("\n" + line);
