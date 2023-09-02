@@ -68,14 +68,14 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
-        System.out.println(column);
+
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
 
             String aValue = row.get(column);
-
-            if (aValue.contains(value)) {
+            String aValueUpper = aValue.toUpperCase();
+            if (aValueUpper.contains(value.toUpperCase())) {
                 jobs.add(row);
             }
         }
@@ -100,14 +100,15 @@ public class JobData {
             String[] keys = allJob.keySet().toArray(new String[0]);
 
             for (String key : keys) {
-                if (allJob.get(key).contains(value)){
+               String keyValue = allJob.get(key).toUpperCase();
+                if (keyValue.contains(value.toUpperCase())){
                     state = true;
                 }
             }
 
             if (state) {
                jobs.add(allJob);
-               System.out.println(allJob);
+//               System.out.println(allJob);
             }
         }
 
